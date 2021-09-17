@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.containerIconTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerInputs {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    width: 1000px;
+}
+
+.containerInputs input {
+    width: 400px;
+    margin-top: 10px;
+    padding: 8px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    display: flex;
+}
+
+.title {
+    text-align: center;
+}
+
+.containerFigli{
+    margin-bottom: 60px;
+}
+
+.inputsNomiFigli {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputsNomiFigli input {
+    padding: 6px;
+    margin: 5px 10px;
+}
+
+.inputsNomiFigli button {
+    background-color: red;
+    font-family: 'Montserrat';
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    transition: 0.4s;
+}
+
+.inputsNomiFigli button:hover {
+    background-color: rgb(156, 4, 4);
+}
+
+.titleFigli {
+    text-align: center;
+}
+
+.containerInputNuoviFigli {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerInputNuoviFigli input {
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.btnAggiungiFiglio {
+    width: 200px;
+    height: 60px;
+    transition: 0.4s;
+    background-color: rgb(28, 0, 187);
+    font-family: 'Montserrat';
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.btnAggiungiFiglio:hover {
+    background-color: rgb(2, 2, 136);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
+
+.containerBtnNuoviFigli {
+    margin-bottom: 60px;
+}
+
+.btnAggiorna {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.btnAggiorna button {
+    height: 50px;
+    width: 500px;
+    cursor:pointer;
+    border: none;
+    background-color: rgb(9, 235, 9);
+    color: rgb(85, 85, 85);
+    transition: 0.4s;
+}
+
+.btnAggiorna button:hover {
+    background-color: green;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 20px;
+}

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+.tabllaContainer {
+    align-items: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.tabllaContainer th {
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 1.5rem;
+
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.edit {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.iconAction {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#thId {
+    width: 30px;
+}
+
+#tdId {
+    text-align: center;
+}
+
+#tdNome, #tdCognome {
+    padding: 0 15px;
+}
+
+.btnDelete, .btnEdit  {
+    cursor: pointer;
+    border: none;
+    width: 80px;
+    height: 70px;
+    transition: 0.4s;
+}
+.btnIcon {
+    background-color: white;
+    /* border: none; */
+    border: 0.05rem solid rgb(233, 232, 232);
+    cursor: pointer;
+    width: 110px;
+    height: 90px;
+    transition: 0.4s;
+    margin: 0 5px;
+    font-family: 'Montserrat';
+    padding-top: 10px;
+}
+.btnIcon:hover {
+    background-color: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.btnDelete:hover {
+    background-color: rgb(194, 7, 7);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.btnEdit:hover {
+    background-color: rgb(1, 136, 19);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btnEdit, .btnDelete p {
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
+.contentTitle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#homeIcon:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.contentIcons {
+    margin-top: 25px;
+}
+
+.btnItem {
+    background-color: transparent;
+    border: none;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 16px;
+}
