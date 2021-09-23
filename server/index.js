@@ -58,7 +58,7 @@ app.post("/inserisciUser", async(req, res) => {
             id = results.insertId;
             for(let i = 0; i<req.body.figlio.length; i++) {
                 
-                connection.query(`INSERT INTO Figli (id, nomeFiglio, anniFiglio, idMadre) VALUES (NULL, "${req.body.figlio[i]}", "${req.body.anniFiglio[i]}", ${id})`, (err, results, fields) => {
+                connection.query(`INSERT INTO Figli (id, nomeFiglio, anniFiglio, idMadre) VALUES (NULL, "${req.body.figlio[i].nomeFiglio}", "${req.body.figlio[i].anniFiglio}", ${id})`, (err, results, fields) => {
                     if(err) {
                         console.log(err);
                         // return res.json({ msg: 'Inserimento errato!' })
