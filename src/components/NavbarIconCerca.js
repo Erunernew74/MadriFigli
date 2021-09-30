@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './NavbarIcon.module.css';
+import styles from './NavbarIconCerca.module.css';
 import { FcHome, FcAbout, FcAlphabeticalSortingAz, FcList, FcSearch } from 'react-icons/fc'
 import { Link } from 'react-router-dom';
 

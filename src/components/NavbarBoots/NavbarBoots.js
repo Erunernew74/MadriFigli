@@ -25,6 +25,9 @@ const NavbarBoots = () => {
           <Link to="/lista" className={styles.linkItem}>
             <li>Lista completa</li>
           </Link>
+          <Link to="/cercaUser" className={styles.linkItem}>
+            <li>Cerca Contatto</li>
+          </Link>
         </ul>
       </div>
     </div>

@@ -109,8 +109,8 @@ app.delete("/eliminaMadre/:id", (req, res) => {
     res.json({status: true})
 })
 
-
-app.delete("/eliminaFiglio/:id", (req, res) => {
+// Elimina figlio dalla tabella 'AggiornaUsers'
+app.delete("/eliminaFiglio/:id", async (req, res) => {
     id = req.params.id;
     connection.query(`DELETE FROM figli WHERE id = ?`, id,(err, result) => {
         if(err) {
@@ -122,6 +122,60 @@ app.delete("/eliminaFiglio/:id", (req, res) => {
     })
 })
 
+app.post("/inserisciFiglio", async (req, res) => {
+    if(req.body.id) {
+        connection.query(`UPDATE figli SET nomeFiglio="${req.body.nomeFiglio}" WHERE id=${req.body.id}`, (err, rewults, fields) => {
+            if(err) {
+                return res.json({ status: false })
+            }
+        })
+    }else {
+        connection.query(`INSERT INTO figli (nomeFiglio, anniFiglio, idMadre) VALUES ("${req.body.nomeFiglio}", "${req.body.anniFiglio}", ${req.body.idMadre})`, (err, results, fields) => {
+            if(err) {
+                return res.json({ status: true })
+            }
+        })
+    }
+
+    return res.json({ status: true })
+})
+
+app.post("/aggiornaContatto", async (req, res) => {
+    connection.query(`UPDATE madri SET nome="${req.body.nome}",
+                        cognome="${req.body.cognome}",
+                        cittaResidenza="${req.body.cittaResidenza}",
+                        provinciaResidenza="${req.body.provinciaResidenza}",
+                        indirizzo="${req.body.indirizzo}",
+                        cittaNascita="${req.body.cittaNascita}",
+                        annoNascita="${req.body.annoNascita}",
+                        codiceFiscale="${req.body.codiceFiscale}" 
+                        WHERE id=${req.body.id}`), (err, results, fields) => {
+                            if(err) {
+                                return res.json({ status: false })
+                            }
+                        }
+                        return res.json({ status: true })
+})
+
+app.post("/cercaContatto", async (req, res) => {
+    connection.query(`SELECT * FROM madri INNER JOIN figli ON madri.id = figli.idMadre
+                      WHERE nome LIKE "${req.body.nome}%" AND
+                      cognome LIKE "${req.body.cognome}%" AND
+                      cittaResidenza LIKE "${req.body.cittaResidenza}%" AND
+                      provinciaResidenza LIKE "${req.body.provinciaResidenza}%" AND
+                      indirizzo LIKE "${req.body.indirizzo}%" AND
+                      cittaNascita LIKE "${req.body.cittaNascita}%" AND
+                      annoNascita LIKE "${req.body.annoNascita}%" AND
+                      codiceFiscale LIKE "${req.body.codiceFiscale}%" AND
+                      nomeFiglio LIKE "${req.body.nomeFiglio}%" AND
+                      anniFiglio LIKE "${req.body.anniFiglio}%";`, (err, results, fields) => {
+                          if(err){
+                              return res.json({ status: false })
+                          }
+
+                          return res.json(results)
+                      })
+})
 
 
 app.listen(PORT, () => {

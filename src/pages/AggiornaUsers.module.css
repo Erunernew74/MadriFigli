@@ -115,3 +115,46 @@
     font-family: 'Montserrat';
     font-size: 20px;
 }
+
+.btnContainer {
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnContainer button {
+    padding: 8px;
+    margin-right: 10px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.titleElencoFigli {
+    text-align: center;
+}
+
+.btnSblocca {
+    cursor: pointer;
+    background-color: white;
+    width: 100px;
+    height: 90px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+    color: rgb(2, 2, 2);
+    font-family: 'Montserrat';
+    transition: 0.4s;
+    border: 0.05rem solid rgb(233, 232, 232);
+    padding-top: 10px;
+}
+
+.btnSblocca:hover {
+    background-color: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sblocca {
+    font-size: 35px;
+}
+

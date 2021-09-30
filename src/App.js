@@ -4,6 +4,7 @@ import InserimentoUsers from './pages/InserimentoUsers';
 import Home from './pages/Home'
 import ListaUsers from './pages/ListaUsers'
 import About from "./pages/About";
+import CercaUser from "./pages/CercaUser"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/about' exact component={About} />
         <Route path='/inserimento' exact component={InserimentoUsers} />
+        <Route path='/cercaUser' exact component={CercaUser} />
         <Route path='/lista' exact component={ListaUsers} />
       </Switch>
     </Router>

@@ -1,0 +1,91 @@
+.containerRicerca {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: transparent;
+}
+
+.containerRicerca input {
+    width: 500px;
+    margin: 5px 0;
+    padding: 8px;
+    font-family: 'Montserrat';
+}
+
+.containerRicerca tr td {
+    border: none;
+}
+
+.inputLabel {
+    width: 180px;
+    text-align: right;
+}
+
+.trClick {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.trClick:hover {
+    background-color: grey;
+    color: white;
+}
+
+.tdCerca {
+    padding: 10px;
+    width: 350px;
+}
+
+.containerElencoMadri {
+    margin-top: 30px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.numeroTrovati {
+    text-align: center;
+}
+
+.cercaUtenti {
+    border: none;
+    padding: 20px;
+    width: 200px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    transition: 0.4s;
+}
+
+.cercaUtenti:hover {
+    background-color: rgb(4, 90, 4);
+}
+
+.resetUtenti {
+    border: none;
+    padding: 20px;
+    width: 200px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+
+.btnCercaContainer {
+    display: flex;
+    justify-content: center;
+}
+.btnCercaContainer button {
+    margin: 0 10px;
+    font-family: 'Montserrat';
+}
+
+.navbarCerca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

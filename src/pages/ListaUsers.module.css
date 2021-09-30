@@ -120,3 +120,12 @@ td {
     font-weight: 600;
     font-size: 16px;
 }
+
+
+.trClick {
+    cursor: pointer;
+}
+
+.trClick:hover {
+    background-color: rgb(253, 245, 245);
+}

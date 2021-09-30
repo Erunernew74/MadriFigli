@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.container input {
+    padding: 10px;
+    margin-right: 10px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+.container button {
+    background-color: red;
+    border: none;
+    padding: 11px;
+    color: white;
+    font-family: 'Montserrat';
+    width: 150px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.container button:hover {
+    background-color: brown;
+}
+
+.inputAnni {
+    width: 40px;
+}

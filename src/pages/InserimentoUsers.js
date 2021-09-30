@@ -52,7 +52,7 @@ const InserimentoUsers = () => {
         setInputMadre({...inputMadre, [name]: value}); // Setto il nuovo input passandoci dentro il valore del name
     }
 
-    // Funzione che prende i valori inseriti dentro agli input della tabella figli  
+    // Funzione che prende i valori inseriti dentro agli input della tabella figli - *dinamica 
     const handleFigli = (e, i) => {// Gli passo l'evento target e l'indice i
         const {name, value} = e.target;// Prendo il valore inserito nell'input tramite il target
         const newInputsFigli = [...inputsFiglio];// Non sarà più un oggetto bensì un array la copia di inputs
@@ -146,7 +146,7 @@ const InserimentoUsers = () => {
                     </div>
                     <div className={styles.inputFigli}>
                         {inputsFiglio.map((e, i) => {
-                          return <FormInput key={i} e={e} handleFigli={handleFigli} className={styles.formInput} />
+                          return <FormInput key={i} e={e} i={i} handleFigli={handleFigli} className={styles.formInput} />
                         })}
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './NavbarIcon.module.css';
+import styles from './NavbarIconCerca.module.css';
 import { FcHome, FcAbout, FcAlphabeticalSortingAz, FcList, FcSearch } from 'react-icons/fc'
 import { Link } from 'react-router-dom';
 
@@ -26,18 +26,12 @@ const NavbarIcon = () => {
                             <p>INSERIMENTO</p>
                         </button>
                     </Link>
-                    <a href='/lista'>
-                        <button className={styles.btnIcon} id={styles.btnIconAbout}>
-                            <FcList className={styles.edit} className={styles.edit}/>
-                            <p>LISTA </p>
-                        </button>
-                    </a>
-                    <a href='/cercaUser'>
+                    <Link to='/cercaUser'>
                         <button className={styles.btnIcon} id={styles.btnIconAbout}>
                             <FcSearch className={styles.edit} className={styles.edit}/>
                             <p>CERCA</p>
                         </button>
-                    </a>
+                    </Link>
                 </div>   
             </div>
         </div>

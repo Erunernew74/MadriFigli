@@ -4,6 +4,7 @@ import { FcEditImage, FcDeleteDatabase, FcHome, FcAbout, FcAlphabeticalSortingAz
 import EliminaSuccess from '../components/EliminaSuccess';
 import { Link } from 'react-router-dom';
 import AggiornaUsers from './AggiornaUsers';
+import NavbarIconLista from '../components/NavbarIconLista';
 
 const ListaUsers = () => {
     // State per far vedere l'elenco delle madri nella lista grazie allo state useEffect
@@ -76,24 +77,7 @@ const ListaUsers = () => {
         <div className={styles.container}>
             <div className={styles.contentTitle}>
                 <div className={styles.contentIcons}>
-                    <Link to='/'>
-                        <button className={styles.btnIcon} id={styles.btnIconHome}>
-                            <FcHome className={styles.edit} className={styles.edit}/>
-                            <p>HOME</p>
-                        </button>
-                    </Link> 
-                    <Link to='/about'>
-                        <button className={styles.btnIcon} id={styles.btnIconAbout}>
-                            <FcAbout className={styles.edit} className={styles.edit}/>
-                            <p>ABOUT</p>
-                        </button>
-                    </Link>
-                    <Link to='/inserimento'>
-                        <button className={styles.btnIcon} id={styles.btnIconAbout}>
-                            <FcAlphabeticalSortingAz className={styles.edit} className={styles.edit}/>
-                            <p>INSERIMENTO</p>
-                        </button>
-                    </Link>
+                    <NavbarIconLista />
                 </div>
                 
                 <h1>Lista completa delle madri</h1>    
@@ -102,7 +86,7 @@ const ListaUsers = () => {
             <table className={styles.tabllaContainer}>
                 <thead>
                     <tr>
-                    <th id={styles.thId}>ID</th>
+                    <th id={styles.thId}>ID</th> 
                     <th>Nome</th>
                     <th>Cognome</th>
                     <th id={styles.thAction}>Action</th>
@@ -112,9 +96,9 @@ const ListaUsers = () => {
                 {madriUniche.map((e, index) => {
                     return(
                         <tbody>
-                            <tr key={index}>
+                            <tr key={index} onClick={() => {setRisUpdate(true); setContattoMadre(e)}} className={styles.trClick}>
                             <td id={styles.tdId}>{index + 1}</td>
-                            <td  id={styles.tdNome}><button className={styles.btnItem} onClick={() => {setRisUpdate(true); setContattoMadre(e)}}>{e.nome}</button></td>
+                            <td  id={styles.tdNome}>{e.nome}</td>
                             <td id={styles.tdCognome}>{e.cognome}</td>
                             <td>
                                 <div className={styles.iconAction}>
