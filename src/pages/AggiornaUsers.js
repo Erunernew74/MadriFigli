@@ -5,6 +5,7 @@ import styles from './AggiornaUsers.module.css';
 import NavbarIcon from '../components/NavbarIcon';
 import FormInputsDelete from '../components/FormInputsDelete';
 import { FcUnlock } from 'react-icons/fc';
+import { GrUpdate } from 'react-icons/gr'
 
 
 
@@ -157,84 +158,101 @@ const AggiornaUsers = ({  contattoMadre, madri }) => {
                             <FcUnlock  className={styles.sblocca}/>
                             <p>SBLOCCA</p>
                         </button>
+                        <button className={styles.btnSblocca} onClick={() => aggiornaUser()}>
+                            <GrUpdate  className={styles.sblocca}/>
+                            <p>AGGIORNA</p>
+                        </button>
                         
                         
                         {/* Visualizzazione dei dati della madre */}
                         <div className={styles.containerInputs}>
-                            <div>
-                                <lalbel>Nome:</lalbel>
-                                <input type='text'
-                                    name="nome" 
-                                    value={input.nome}
-                                    onChange={handleMadri}
-                                    disabled={disabled}
-                                    /><br/>
-                                <lalbel>Cognome:</lalbel>
-                                <input type='text'
-                                    name="cognome" 
-                                    value={input.cognome}
-                                    onChange={handleMadri}
-                                    disabled={disabled}
-                                    /><br/>
-                                <lalbel>Città di residenza:</lalbel>
-                                <input type='text'
-                                    name="cittaResidenza"
-                                     value={input.cittaResidenza} 
-                                     onChange={handleMadri}
-                                     disabled={disabled}
-                                     /><br/>
-                                <lalbel>Indirizzo:</lalbel>
-                                <input type='text'
-                                    name="indirizzo" 
-                                    value={input.indirizzo} 
-                                    onChange={handleMadri}
-                                    disabled={disabled}
-                                    /><br/>
+                            <div className={styles.anagraficaContainer}>
+                                <fieldset className={styles.fieldsetAnagrafica}>
+                                <legend>Anagrafica</legend>
+                                    <div>
+                                        <lalbel>Nome:</lalbel>
+                                        <input type='text'
+                                            name="nome" 
+                                            value={input.nome}
+                                            onChange={handleMadri}
+                                            disabled={disabled}
+                                            /><br/><br/>
+                                        <lalbel>Cognome:</lalbel>
+                                        <input type='text'
+                                            name="cognome" 
+                                            value={input.cognome}
+                                            onChange={handleMadri}
+                                            disabled={disabled}
+                                            /><br/><br/>
+                                        <lalbel>Città di residenza:</lalbel>
+                                        <input type='text'
+                                            name="cittaResidenza"
+                                            value={input.cittaResidenza} 
+                                            onChange={handleMadri}
+                                            disabled={disabled}
+                                            /><br/><br/>
+                                        <lalbel>Indirizzo:</lalbel>
+                                        <input type='text'
+                                            name="indirizzo" 
+                                            value={input.indirizzo} 
+                                            onChange={handleMadri}
+                                            disabled={disabled}
+                                            /><br/><br/>
+                                    </div>
+                                    <div>
+                                        <lalbel>Provincia di residenza:</lalbel>
+                                        <input type='text'
+                                            name="provinciaResidenza" 
+                                            value={input.provinciaResidenza}
+                                            onChange={handleMadri}
+                                            disabled={disabled} 
+                                            /><br/><br/>
+                                        <lalbel>Città di nascita:</lalbel>
+                                        <input type='text'
+                                            name="cittaNascita" 
+                                            value={input.cittaNascita}
+                                            onChange={handleMadri}
+                                            disabled={disabled} 
+                                            /><br/><br/>
+                                        <label>Anno di nascita:</label>
+                                        <input type='text'
+                                            name="annoNascita" 
+                                            value={input.annoNascita}
+                                            onChange={handleMadri}
+                                            disabled={disabled} 
+                                            /><br/><br/>
+                                        <label>Codice Fiscale:</label>
+                                        <input type='text'
+                                            name="codiceFiscale" 
+                                            value={input.codiceFiscale}
+                                            onChange={handleMadri}
+                                            disabled={disabled} 
+                                            /><br/><br/>
+                                    </div><br/>
+                                </fieldset>
                             </div>
-                            <div>
-                                <lalbel>Provincia di residenza:</lalbel>
-                                <input type='text'
-                                    name="provinciaResidenza" 
-                                    value={input.provinciaResidenza}
-                                    onChange={handleMadri}
-                                    disabled={disabled} 
-                                    /><br/>
-                                <lalbel>Città di nascita:</lalbel>
-                                <input type='text'
-                                    name="cittaNascita" 
-                                    value={input.cittaNascita}
-                                    onChange={handleMadri}
-                                    disabled={disabled} 
-                                    /><br/>
-                                <label>Anno di nascita:</label>
-                                <input type='text'
-                                    name="annoNascita" 
-                                    value={input.annoNascita}
-                                    onChange={handleMadri}
-                                    disabled={disabled} 
-                                    /><br/>
-                                <label>Codice Fiscale:</label>
-                                <input type='text'
-                                    name="codiceFiscale" 
-                                    value={input.codiceFiscale}
-                                    onChange={handleMadri}
-                                    disabled={disabled} 
-                                    /><br/>
-                            </div><br/>
+                            
+                            <div className={styles.figliContainer}>
+                                <fieldset className={styles.fieldsetFigli}>
+                                <legend>Figli</legend>
+                                    <div>
+                                    {inputsFigli.map((e, i) => {
+                                        return(
+                                            <FormInputsDelete key={i} e={e} i={i} handleFigli={handleFigli} eliminaFiglio={eliminaFiglio} disabled={disabled} />
+                                        )
+                                    })}
+                                    </div>
+                                    <button onClick={aggiungiFiglio}>AGGIUNGI FIGLIO</button>
+                                </fieldset>  
+                            </div>
                               
                         </div>
-                        <div>
-                            <h1 className={styles.titleElencoFigli}>Figli</h1>
-                            {inputsFigli.map((e, i) => {
-                                return(
-                                    <FormInputsDelete key={i} e={e} i={i} handleFigli={handleFigli} eliminaFiglio={eliminaFiglio} disabled={disabled} />
-                                )
-                            })}
-                    </div>
+                        
+                        
                     <div className={styles.btnContainer}>
                         
-                        <button onClick={aggiungiFiglio}>AGGIUNGI FIGLIO</button>
-                        <button onClick={() => aggiornaUser()}>AGGIORNA</button>
+                        
+                        <button onClick={() => aggiornaUser()} className={styles.btnAggiorna}>AGGIORNA</button>
                     </div>
                         
                 </div>

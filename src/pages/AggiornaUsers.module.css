@@ -9,18 +9,24 @@
 .containerInputs {
     display: flex;
     /* flex-direction: column; */
-    justify-content: space-around;
-    width: 1000px;
+    justify-content: space-between;
+    width: auto;
+    margin-bottom: 40px;
 }
 
-.containerInputs input {
-    width: 400px;
-    margin-top: 10px;
+.anagraficaContainer {
+    padding-right: 20px;
+}
+
+.anagraficaContainer input{
     padding: 8px;
+    width: 540px;
     font-family: 'Montserrat';
     font-weight: 600;
-    display: flex;
+    margin-top: 5px;
 }
+
+
 
 .title {
     text-align: center;
@@ -158,3 +164,15 @@
     font-size: 35px;
 }
 
+.anagraficaContainer {
+    width: 600px;
+}
+
+.figliContainer {
+    width: 600px;
+}
+
+
+.fieldsetAnagrafica, .fieldsetFigli {
+    padding-top: 20px;
+}
