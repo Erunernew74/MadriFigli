@@ -36,10 +36,25 @@ const CercaUser = () => {
       },
       body: JSON.stringify(inputs),
     });
+    
     const contatti = await res.json();
     if (contatti.error) {
       setErrors(contatti.error);
     } else {
+      // Se ricerco un nome di figlio devo fare un'altra fetch per avere tutti i figli della madre visualizzati nella ricerca
+      if(contatti.length == 1) {
+        const res = await fetch("http://localhost:3032/cercaContatto", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json"
+          },
+          body: JSON.stringify({ idMadre: contatti[0].idMadre })
+        })
+        const allContacts = await res.json();
+        return setData(allContacts)
+      }
+
+
       setData(contatti);
     }
   };

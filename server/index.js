@@ -158,7 +158,18 @@ app.post("/aggiornaContatto", async (req, res) => {
 })
 
 app.post("/cercaContatto", async (req, res) => {
-    connection.query(`SELECT * FROM madri INNER JOIN figli ON madri.id = figli.idMadre
+    // Qui viene fatta la ricerca se si specifica un nome del figlio
+    if(req.body.idMadre) {
+        connection.query(`SELECT * FROM madri INNER JOIN figli ON madri.id = figli.idMadre
+                        WHERE idMadre = ${req.body.idMadre}`, (err, results, fields) => {
+                            if(err) {
+                                return res.json({ status: false })
+                            }
+                            return res.json(results)
+                        })
+    }else {
+        // Qui viene fatta la ricerca normale
+        connection.query(`SELECT * FROM madri INNER JOIN figli ON madri.id = figli.idMadre
                       WHERE nome LIKE "${req.body.nome}%" AND
                       cognome LIKE "${req.body.cognome}%" AND
                       cittaResidenza LIKE "${req.body.cittaResidenza}%" AND
@@ -175,6 +186,8 @@ app.post("/cercaContatto", async (req, res) => {
 
                           return res.json(results)
                       })
+    }
+    
 })
 
 

@@ -28,6 +28,7 @@ const AggiornaUsers = ({  contattoMadre, madri }) => {
     // Questo state ci serve per il passaggio condizionale alla pagina di avvenuto aggiornamento
     const [goToToUpdate, setGoToUpdate] = useState(false);
 
+    // State per effettuare l'animazione toggle per abilitare o disabilitare gli input
     const [disabled, setDisabled] = useState(true)
 
 
